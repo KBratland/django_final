@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Urban Fruit Finder</title>
+
+    <!-- JQuery scripts-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap
+    Latest compiled and minified CSS -->  <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic,400italic,700,700italic,900,900italic,300'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/Fruit_Finder.css"/>
+
+    <!-- Custom Javascript -->
+    <script src="{{ STATIC_URL }}js/Fruit_Finder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<h1 class="title">Urban Fruit Finder</h1>
+
+<!--!divider for fruit carousel-->
+<div>
+    <p>this is a carousel for pictures</p><br>
+</div>
+
+<!--!divider L-middle-buttons for Sign_up, Log_in, and How_to buttons-->
+
+<div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Registration</button>
+    <button type="button" class="btn btn-primary">Log-in</button>
+    <button type="button" class="btn btn-primary">Contact Us!</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Register for the Urban fruit finder here!</h4>
+            </div>
+            <div class="modal-body">
+                {% block registration %}
+                {% endblock registration %}
+            </div>
+            <div class="modal-footer">
+                <p> Please read the <span class="bold">'Ethics' </span>and <span class="bold">'How to Pick'</span>
+                    section! Being considerate of the people who care for fruit
+                    trees builds our community and keeps food conservation a priority for all.</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% block registration_success %}
+{% endblock registration_success %}
+<!--!divider for mapped fruit tree map + example-->
+
+<div>
+    this is a map with a tree image that marks a tree
+</div>
+<!--!divider for welcome text or L_buttons results-->
+<div></div>
+
+
+<!--!divider for R-lower-buttons program working buttons-->
+<div></div>
+
+
+</body>
+</html>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->

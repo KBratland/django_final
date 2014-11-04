@@ -1,0 +1,14 @@
+{% extends 'Fruit_Finder_base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block sign_up %}
+
+<h1> Sign Up here </h1>
+<form method="POST" action>
+    {%  csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Submit">
+    </form>
+
+{% endblock sign_up %}
