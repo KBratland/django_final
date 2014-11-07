@@ -15,6 +15,7 @@ SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates/')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static/')
+MEDIA_PATH = os.path.join(PROJECT_PATH, 'media/')
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
 
 # Quick-start development settings - unsuitable for production
@@ -41,6 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'signups',
+    'crispy_forms',
+    'person',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,11 +84,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/go_away/'
+MEDIA_URL = '/media/'
+
+STATIC_URL = '/static/'
+
+# LOGIN_REDIRECT_URL = 'login'
 
 STATICFILES_DIRS = (
     STATIC_PATH,

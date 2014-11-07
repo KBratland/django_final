@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.encoding import smart_unicode
+
 # Create your models here.
 
 
@@ -14,4 +14,4 @@ class SignUp(models.Model):
     user_role = models.CharField(choices=finder_type, max_length=6)
     
     def __unicode__(self):
-        return smart_unicode(self.email)
+        return self.email

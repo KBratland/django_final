@@ -1,7 +1,5 @@
 __author__ = 'Kristin'
-
-from django.contrib.auth.models import User
-from django.shortcuts import render_to_response, RequestContext
+from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
@@ -16,56 +14,62 @@ def home(request):
 
 
 def registration(request):
-    form = RegistrationForm()
-    token = {}
-    token.update(csrf(request))
-    token['form'] = form
 
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return render_to_response('registration_success.html')
-            # username = request.POST.get('username', '')
-            # password = request.POST.get('password', '')
-            # user = auth.authenticate(username=username, password=password)
-            #
-            # if user is not None:
-            #     if user.is_active:
-            #         auth.login(request, user)
-            #
-            # return render_to_response('profile.html', {'first_name':request.user.username})
+
+        else:
+            return render_to_response('registration_fail.html')
+
+    else:
+        form = RegistrationForm()
+    token = {}
+    token.update(csrf(request))
+    token['form'] = form
 
     return render_to_response('registration.html', token)
 
 
-# def registration_success():
-#     username = User.objects.get()
-#     return render_to_response('registration_success.html', {'username':username})
+#Log-in functions
 
 
-# def registration_success():
-# #     return HttpResponseRedirect('person/',)
-#
-#
-# def password_reset():
-#
-# #Log-in functions
-#
-# def login():
-#
-# def authentication():
-# username = request.POST.get('username', '')
-# password = request.POST.get('password', '')
-# user = auth.authenticate(username=username, passowrd=password)
-#
-# if user is not None:
+def login(request):
+    token = {}
+    token.update(csrf(request))
+    return render_to_response('login.html', token)
 
+
+def authenticate(request):
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None:
+        auth.login(request, user)
+        return HttpResponseRedirect('/login_success')
+    else:
+        return HttpResponseRedirect('/invalid')
+
+
+def login_success(request):
+    return render_to_response('login_success.html', {'first_name': request.user.username})
+
+
+def invalid(request):
+    return render_to_response('invalid.html')
+
+
+def logout(request):
+    return render_to_response('logout.html')
+
+#      username = request.POST.get('username', '')
+#             password = request.POST.get('password', '')
+#             user = auth.authenticate(username=username, password=password)
 #
-# def login_success():
+#             if user is not None:
+#                 if user.is_active:
+#                     login(request, user)
 #
-# def login_fail():
-#
-# def logout():
-#
-# def invalid_user():
+#             return render_to_response('profile.html', {'first_name':request.user.username})
