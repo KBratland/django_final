@@ -22,8 +22,7 @@ urlpatterns = patterns('',
     url(r'^login_success/$', 'Fruit_Finder.views.login_success', name='login_success'),
     url(r'^authenticate/$', 'Fruit_Finder.views.authenticate', name='authenticate'),
     url(r'^invalid/$', 'Fruit_Finder.views.invalid', name='invalid'),
-
-    # url(r'^logout/$', 'Fruit_Finder.views.logout', name='register'),
+    url(r'^logout/$', 'Fruit_Finder.views.logout', name='logout'),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^person/', include('person.urls')),

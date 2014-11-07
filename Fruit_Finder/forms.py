@@ -18,7 +18,7 @@ class RegistrationForm(UserCreationForm):
         self.fields['username'].label = "Create your screen name"
         self.fields['email'].label = "Email"
         self.fields['password1'].label = "Create a password"
-        self.fields['password2'].label = "Confirm password"
+        self.fields['password2'].label = "Confirm your password"
 
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
