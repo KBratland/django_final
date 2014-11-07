@@ -26,6 +26,6 @@ urlpatterns = patterns('',
     # url(r'^logout/$', 'Fruit_Finder.views.logout', name='register'),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^profile/', include('person.urls')),
+    url(r'^person/', include('person.urls')),
 
 )
