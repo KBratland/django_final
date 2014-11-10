@@ -1,4 +1,4 @@
-Example of Crispy forms but I am not ready for that yet.
+Example of Crispy forms 
 
 
 # class SignUp(forms.Form):
