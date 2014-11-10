@@ -1,0 +1,33 @@
+{% extends 'Fruit_Finder_base.html' %}
+
+{% block login %}
+<div class="modal fade" id="myModal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Welcome back</h4>
+            </div>
+                <div class="modal-body">
+                    {% if form.errors %}
+                        <p> Your username and password did not match.  Please try again</p>
+                    {% endif %}
+                    <form action="/authenticate/" method="post">
+                        {% csrf_token %}
+                        <label for="username">User name:</label>
+                        <input type="text" name="username" value="" id="username">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" value="" id="password">
+                        <input type="submit" value="login" />
+                    </form>
+                </div>
+            <div class="modal-footer">
+                <p> Please read the <span class="bold">'Ethics' </span>and <span class="bold">'How to Pick'</span>
+                    section! <br> Being considerate of the people who care for fruit
+                    trees builds our community and keeps food conservation a priority for all.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock login %}
