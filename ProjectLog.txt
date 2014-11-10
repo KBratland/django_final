@@ -1,0 +1,9 @@
+Project:  Fruit Finder
+
+TODO:
+geodjango tutorial in order to put in a mapping app for finding fruit. goal is to be able to create a Tree entity with location data. This will relate to the tree attribute db/model but for the project I just want to get the tree on a map!
+
+DONE:
+register
+login
+profile that updates
