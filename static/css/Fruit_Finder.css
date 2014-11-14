@@ -6,3 +6,9 @@ body {
 .bold {
     background-color: lightgoldenrodyellow;
 }
+
+#map {
+    height:400px;
+    width:80%;
+    padding-top:100px;
+}

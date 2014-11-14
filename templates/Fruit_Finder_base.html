@@ -17,17 +17,63 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 
+    <!-- Mapping links -->
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
     <!-- Custom styles for this template -->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic,400italic,700,700italic,900,900italic,300'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Fruit_Finder.css' %}"/>
 
-    <!-- Custom Javascript -->
+    <!-- Custom Javascript -- mine & leaflet for mapping -->
     <script src="{% static 'js/Fruit_Finder.js' %}" type="text/javascript"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+
 
 </head>
 
 <body>
+    <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Urban Fruit Finder</a>
+        </div>
+
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Add a Fruit</a></li>
+                <li><a href="#">Find a Fruit</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Messages <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Ethics</a></li>
+                        <li><a href="#">How to pick</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Contact us!</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/registration/">Register 1st!</a></li>
+                    {% block registration %}
+                    {% endblock registration %}
+                <li><a href="/login/">Login</a></li>
+                    {% block login %}
+                    {% endblock login %}
+            </ul>
+        </div>
+    </nav>
+
 
 <h1 class="title">Urban Fruit Finder</h1>
 
@@ -39,13 +85,6 @@
 <!--!divider L-middle-buttons for Sign_up, Log_in, and How_to buttons-->
 
 <div>
-    <a href="/registration/" class="btn btn-primary">Register here</a>
-    {% block registration %}
-    {% endblock registration %}
-
-    <a href="/login/" class="btn btn-primary">Login</a>
-    {% block login %}
-    {% endblock login %}
 
     <button type="button" class="btn btn-primary">Contact Us!</button>
 </div>
@@ -53,12 +92,24 @@
 {% endblock content %}
 <!--!divider for mapped fruit tree map + example-->
 
-<div>
-    this is a map with a tree image that marks a tree
-</div>
-<!--!divider for welcome text or L_buttons results-->
-<div>
+    <div id="map">
+        <script>
+            var map = L.map('#map').setView([45.52, -122.68], 13);
+            var marker = L.marker([45.52, -122.68]).addTo(map);
 
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18
+            }).addTo(map);
+
+{#            marker.bindPopup("<b>Welcome!</b><br>Drag the marker to the desired location to locate your fruit tree.").openPopup();#}
+
+        </script>
+    </div>
+<!--!divider for welcome text or L_buttons results-->
+    <div>
+{% block output %}
+{% endblock output %}
 </div>
 
 

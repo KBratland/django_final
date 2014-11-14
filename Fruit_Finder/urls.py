@@ -7,15 +7,13 @@ urlpatterns = patterns('',
     # Home:
     url(r'^$', 'Fruit_Finder.views.home', name='home'),
 
-    #somehow I need to load both .registration and .login
-
-    #avater url
+    #avatar url
     #url(r'^avatar/', include('avatar.urls')),
 
     #urls for registration
-
     url(r'^registration/$', 'Fruit_Finder.views.registration', name='registration'),
-    # url(r'^password_reset/$', 'Fruit_Finder.views.password_reset', name='password_reset'),
+    url(r'^output/$', 'Fruit_Finder.views.output', name='output'),
+
 
     #urls for login/logout/authentication/invalid_user
     url(r'^login/$', 'Fruit_Finder.views.login', name='login'),
@@ -26,5 +24,4 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^person/', include('person.urls')),
-
 )

@@ -65,6 +65,8 @@ def logout(request):
     auth.logout(request)
     return render_to_response('logout.html')
 
+
+
 #      username = request.POST.get('username', '')
 #             password = request.POST.get('password', '')
 #             user = auth.authenticate(username=username, password=password)
