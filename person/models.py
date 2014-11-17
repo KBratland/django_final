@@ -19,7 +19,7 @@ class Person(models.Model):
                   ('Both', 'Both'),
                    )
 
-    user_role = models.CharField(choices=finder_type, max_length=6)
+    user_role = models.CharField(choices=finder_type, max_length=10)
 
     def __unicode__(self):
         return "%s's profile" % self.user.username
