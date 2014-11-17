@@ -10,5 +10,14 @@ body {
 #map {
     height:400px;
     width:80%;
-    padding-top:100px;
+}
+
+.left-column{
+    padding: 25px 100px 25px 100px;
+}
+
+/*This doesn't work'*/
+#popup {
+    max-width: 50px;
+    background-color: purple;
 }

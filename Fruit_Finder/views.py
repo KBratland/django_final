@@ -34,8 +34,6 @@ def registration(request):
 
 
 #Log-in functions
-
-
 def login(request):
     token = {}
     token.update(csrf(request))

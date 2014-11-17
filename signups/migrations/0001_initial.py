@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=100, null=True, blank=True)),
                 ('last_name', models.CharField(max_length=100, null=True, blank=True)),
                 ('email', models.EmailField(max_length=75)),
+                ('user_role', models.CharField(max_length=6, choices=[(b'Finder', b'Finder'), (b'Owner', b'Owner'), (b'Both', b'Both')])),
             ],
             options={
             },

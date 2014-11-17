@@ -7,6 +7,12 @@ determine method for setting location to a lat long
 determine table structure for lat long
 determine method for returning lat long as a dot on a map
 
+11/16/14
+changed sqlite3 db to postgres (that took some hacking)
+updated project to be GeoDjango compatible - settings, admin reg, db extensions, etc.
+created fruitlocate app
+
+
 DONE:
 register
 login

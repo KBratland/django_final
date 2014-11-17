@@ -12,7 +12,6 @@ urlpatterns = patterns('',
 
     #urls for registration
     url(r'^registration/$', 'Fruit_Finder.views.registration', name='registration'),
-    url(r'^output/$', 'Fruit_Finder.views.output', name='output'),
 
 
     #urls for login/logout/authentication/invalid_user
