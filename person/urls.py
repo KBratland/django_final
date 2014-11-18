@@ -9,5 +9,5 @@ from django.views  import generic
 # from person.views import PersonProfile
 
 urlpatterns = patterns('',
-    url(r'^$', 'person.views.person_profile', name="person_profile"),
+    url(r'^$', 'person.views.add_fruit', name="add_fruit"),
     )

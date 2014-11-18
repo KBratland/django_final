@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.gis import admin
-from .models import FruitLocate
+from .models import FruitLocations
 
 # Register your models here.
-admin.site.register(FruitLocate, admin.OSMGeoAdmin)
+admin.site.register(FruitLocations, admin.OSMGeoAdmin)
 

@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'signups',
     'crispy_forms',
     'person',
-    'fruitlocate',
+    'fruitlocations',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,9 +73,9 @@ WSGI_APPLICATION = 'Fruit_Finder.wsgi.application'
 #     }
 # }
 
-DATABASES= {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'fruitfinder',
         'USER': 'student',
         'PASSWORD': 'codeguild',

@@ -64,6 +64,12 @@ def logout(request):
     return render_to_response('logout.html')
 
 
+def ethics(request):
+    return render_to_response('ethics.html')
+
+
+def pick(request):
+    return render_to_response('how_to_pick.html')
 
 #      username = request.POST.get('username', '')
 #             password = request.POST.get('password', '')

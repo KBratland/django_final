@@ -9,11 +9,22 @@ body {
 
 #map {
     height:400px;
-    width:80%;
+    width:50%;
 }
 
-.left-column{
-    padding: 25px 100px 25px 100px;
+.leaflet-control-container {
+    padding: 5px 10px 5px 10px;
+}
+
+.title {
+    padding-bottom: 10px;
+}
+
+.active {
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    margin: 25px 100px 25px 100px;
 }
 
 /*This doesn't work'*/

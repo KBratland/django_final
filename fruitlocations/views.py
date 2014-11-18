@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.gis.geos import Point
-from .models import FruitLocation
+from .models import FruitLocations
 from .forms import AddFruitForm
 
 @login_required
@@ -13,7 +13,7 @@ def add_fruit(request):
     if request.method == 'POST':
         form = AddFruitForm(request.POST)
         if form.is_valid():
-            new_point = FruitLocation()
+            new_point = FruitLocations()
             cd = form.cleaned_data
             coordinates = cd['coordinates'].split(',')
             new_point.geom = Point(float(coordinates[0]), float(coordinates[1]))
@@ -21,10 +21,10 @@ def add_fruit(request):
 
             new_point.save()
 
-            return render_to_response('AddFruit_success.html')
+            return render_to_response('fruitlocations/AddFruit_success.html')
 
         else:
-            return render_to_response('AddFruit_error.html')
+            return render_to_response('fruitlocations/AddFruit_error.html')
     else:
         form = AddFruitForm()
 

@@ -14,3 +14,6 @@ class AddFruit(forms.Form):
         fruit_variety = cleaned_data.get("owner")
 
         return cleaned_data
+
+    class Meta:
+        model = AddFruit

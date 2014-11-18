@@ -20,7 +20,10 @@ urlpatterns = patterns('',
     url(r'^authenticate/$', 'Fruit_Finder.views.authenticate', name='authenticate'),
     url(r'^invalid/$', 'Fruit_Finder.views.invalid', name='invalid'),
     url(r'^logout/$', 'Fruit_Finder.views.logout', name='logout'),
+    url(r'^ethics/$', 'Fruit_Finder.views.ethics', name='ethics'),
+    url(r'^pick/$', 'Fruit_Finder.views.pick', name='pick'),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^person/', include('person.urls')),
+    url(r'^fruitlocations/', include('fruitlocations.urls')),
 )

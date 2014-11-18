@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends 'Fruit_Finder_base.html' %}
 
-</body>
-</html>
+{% block add_fruit %}
+      <div id="form-div" style="height: 600px; width: 600px;">
+        <br>
+        <p><em>*All fields are required</em></p>
+        <form action="/add_point/" method="post">{% csrf_token %}
+            <div class="fieldWrapper">
+                <p>1) Place the marker where your house is</p>
+                <div id="map" style="height:400px; width:80%; padding-top:100px;"></div>
+                <input id="coordinates" name="coordinates" value="" type="hidden" />
+            </div>
+            <div class="fieldWrapper">
+                <label>2) Name of the owner</label>
+                {{ form.owner }}
+            </div>
+            <div class="fieldWrapper">
+                <label>3) Price of the house $</label>
+                {{ form.price }}
+            </div>
+            <div class="fieldWrapper">
+                <label>4) Area of the house [m2]:</label>
+                {{ form.area }}
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn" value="Add house">
+        </form>
+        <br>
+    </div>
+{% endblock add_fruit %}

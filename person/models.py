@@ -9,7 +9,6 @@ from django.core.validators import RegexValidator
 class Person(models.Model):
 
     user = models.OneToOneField(User, primary_key=True)
-    # email = models.ForeignKey(User.email)
 
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=100, null=True, blank=True)
