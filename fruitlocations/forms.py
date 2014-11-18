@@ -1,5 +1,7 @@
 __author__ = 'student'
+from django.contrib.gis import admin
 from django import forms
+from models import FruitLocations
 
 
 class AddFruit(forms.Form):
@@ -11,9 +13,10 @@ class AddFruit(forms.Form):
         cleaned_data = self.cleaned_data
 
         coordinates = cleaned_data.get("coordinates")
-        fruit_variety = cleaned_data.get("owner")
+        fruit_variety = cleaned_data.get("fruit_variety")
 
         return cleaned_data
 
     class Meta:
-        model = AddFruit
+        model = FruitLocations
+        # admin.site.register(AddFruit, admin.OSMGeoAdmin)

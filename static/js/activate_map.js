@@ -5,13 +5,13 @@
 $(document).ready(function (){
 
     var map = L.map('map').setView([45.52, -122.68], 13);
-    var treeIcon = L.icon({
-        iconUrl: 'js/tree_icon.png',
-        iconSize:     [38, 95],
-        iconAnchor:   [22, 94]
-    });
+//    var treeIcon = L.icon({
+//        iconUrl: 'images/Tree_icon.png',
+//        iconSize:     [38, 95],
+//        iconAnchor:   [22, 94]
+//    });
 
-    var marker = L.marker([45.52, -122.6], {icon: treeIcon}, {draggable: true});
+    var marker = L.marker([45.52, -122.6], {draggable: true});
 
     marker.addTo(map);
 

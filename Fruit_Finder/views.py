@@ -10,7 +10,7 @@ from .forms import RegistrationForm
 
 
 def home(request):
-    return render_to_response('Fruit_Finder_base.html')
+    return render_to_response('intro_text.html')
 
 
 def registration(request):

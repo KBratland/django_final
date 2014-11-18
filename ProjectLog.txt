@@ -1,16 +1,19 @@
 Project:  Fruit Finder
 
 TODO:
-geodjango tutorial in order to put in a mapping app for finding fruit. goal is to be able to create a Tree entity with location data. This will relate to the tree attribute db/model but for the project I just want to get the tree on a map!
 Look into appropriate data sources for spatial data - perhaps just portland or oregon
 determine method for setting location to a lat long
 determine table structure for lat long
 determine method for returning lat long as a dot on a map
+determine how to make the type of fruit tree a drop down menu. Have date in file called fruit variety
 
 11/16/14
 changed sqlite3 db to postgres (that took some hacking)
 updated project to be GeoDjango compatible - settings, admin reg, db extensions, etc.
 created fruitlocate app
+-built models for fruit tree (location as point and variety typ)
+styled front page to two columns with left being map and right space for forms/info/returned data etc
+
 
 
 DONE:

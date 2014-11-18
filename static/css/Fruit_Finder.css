@@ -7,6 +7,33 @@ body {
     background-color: lightgoldenrodyellow;
 }
 
+.title {
+    padding-bottom: 10px;
+}
+
+.active {
+    columns: 2;
+    -webkit-column-gap: 5px;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    margin: 25px 100px 25px 100px;
+}
+
+.left_column {
+    float: left;
+}
+
+.right_column {
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+    height:400px;
+    padding-left: 10px;
+}
+
 #map {
     height:400px;
     width:50%;
@@ -14,17 +41,6 @@ body {
 
 .leaflet-control-container {
     padding: 5px 10px 5px 10px;
-}
-
-.title {
-    padding-bottom: 10px;
-}
-
-.active {
-    border-style: solid;
-    border-width: 1px;
-    padding: 20px;
-    margin: 25px 100px 25px 100px;
 }
 
 /*This doesn't work'*/
