@@ -25,14 +25,14 @@ def add_fruit(request):
             cd = form.cleaned_data
             coordinates = cd['coordinates'].split(',')
             new_point.geom = Point(float(coordinates[0]), float(coordinates[1]))
-            new_point.fruit_variety = cd['Fruit Variety']
+            new_point.fruit_variety = cd['fruit_variety']
 
             new_point.save()
 
-            return render_to_response('AddFruit_success.html')
+            return render_to_response('fruitlocations/AddFruit_success.html')
 
         else:
-            return render_to_response('AddFruit_fail.html')
+            return render_to_response('fruitlocations/AddFruit_fail.html')
 
     else:
         form = AddFruit()
@@ -41,4 +41,4 @@ def add_fruit(request):
     token.update(csrf(request))
     token['form'] = AddFruit()
 
-    return render_to_response('fruitlocations/add_fruit.html')
+    return render_to_response('fruitlocations/add_fruit.html', token)

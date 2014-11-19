@@ -1,11 +1,12 @@
-{% extends 'Fruit_Finder_base.html' %}
+{% extends 'fruitlocations/add_fruit.html' %}
 
-{% block content %}
+{% block sub_content %}
 
-<h1> You have added a fruit {{ username }}</h1>
-    <div>
-    <a href="/person"><button type="button" class="btn btn-primary">Update attributes</button></a>
-    <a href="/logout/"><button type="button" class="btn btn-primary">Logout</button></a>
-    </div>
+<h2> You have added a fruit!</h2>
+<h4> To add another point, click the add more fruit button below!</h4>
 
-{% endblock content %}
+{% endblock sub_content %}
+
+{% block sub_content2 %}
+    <a href="" class="btn btn-success" id="add_another_button">Add another</a>
+{% endblock sub_content2 %}

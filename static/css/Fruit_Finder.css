@@ -42,3 +42,6 @@ body {
     max-width: 400px;
 }
 
+#add_another_button {
+    padding-left: 10px;
+}

@@ -8,24 +8,30 @@
     </div>
 {% endblock left_column %}
 
+
+
 {% block right_column %}
-    <p>Hi there!</p>
+{% block sub_content %}
+{% endblock sub_content %}
+    <h3>Adding a fruit tree</h3>
+    <p>Adding a fruit is easy.  Just click the location of the tree on the map, select the general fruit type, and select the submit button. </p>
+    <p>To get a better view of your location, double click the map to zoom or use the zoom bar in the upper left corner of the map.</p>
     <div id="form-div" >
         <br>
-        <p><em>*All fields are required</em></p>
+        <p><em>*Please not that all fields are required</em></p>
         <form action="" method="POST">{% csrf_token %}
             <div id="'add_fruit_field">
                 <label>1) Place the marker where the fruit is</label>
-                {{ form.coordinates }}
-                <input id="coordinates" name="coordinates" placeholder="Coordinates"/>
+                <input id="coordinates" name="coordinates" placeholder="Coordinates" type="hidden"/>
             </div><br>
             <div id="'add_fruit_field">
                 <label>2) What kind of fruit is it (e.g. apple or pear, but do not include variety)?</label>
                 {{ form.fruit_variety }}
-                <input id="fruit_variety" name="Fruit Variety" placeholder="Fruit variety"/>
             </div><br>
             <div id="'add_fruit_field">
                 <input type="submit" name="submit" class="btn" value="Add fruit!">
+                {% block sub_content2 %}
+                {% endblock sub_content2 %}
             </div>
         </form><br>
     </div>
