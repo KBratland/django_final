@@ -7,10 +7,11 @@ from django.contrib.gis import admin
 
 class FruitLocations (models.Model):
 
-    geom = models.PointField(srid=4326)
-    fruit_variety = models.CharField("What kind of fruit is it (e.g. apple or pear, but do not include variety)?", max_length=50)
+    # make choices be the drop down field from fallen fruit
 
-    objects = models.GeoManager()
+    geom = models.PointField(srid=4326)
+    fruit_variety = models.CharField(max_length=50)
+    date_added = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.fruit_variety

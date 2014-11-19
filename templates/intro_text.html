@@ -1,4 +1,11 @@
 {% extends 'Fruit_Finder_base.html' %}
+{% load staticfiles %}
+
+{% block left_column %}
+    <div id="map">
+        <script src="{% static 'js/activate_map.js' %}" type="text/javascript"></script>
+    </div>
+{% endblock left_column %}
 
 {% block right_column %}
     <h2>Welcome!</h2>

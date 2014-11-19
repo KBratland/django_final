@@ -15,6 +15,7 @@ SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates/')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static/')
+IMAGE_PATH = os.path.join(PROJECT_PATH, 'images/')
 MEDIA_PATH = os.path.join(PROJECT_PATH, 'media/')
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
 
@@ -112,4 +113,8 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS = (
     TEMPLATE_PATH,
+)
+
+IMAGE_DIRS = (
+    IMAGE_PATH,
 )

@@ -7,7 +7,7 @@ from models import FruitLocations
 class AddFruit(forms.Form):
 
     coordinates = forms.CharField(max_length=200, required=True)
-    fruit_variety = forms.CharField(max_length=100, required=True)
+    fruit_variety = forms.CharField(max_length=50, required=True)
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -19,4 +19,3 @@ class AddFruit(forms.Form):
 
     class Meta:
         model = FruitLocations
-        # admin.site.register(AddFruit, admin.OSMGeoAdmin)

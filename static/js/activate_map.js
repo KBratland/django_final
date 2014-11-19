@@ -5,8 +5,9 @@
 $(document).ready(function (){
 
     var map = L.map('map').setView([45.52, -122.68], 13);
+//    var myURL = jQuery( 'script[src$="activate_map.js"]' ).attr( 'src' ).replace( 'activate_map.js', '' );
 //    var treeIcon = L.icon({
-//        iconUrl: 'images/Tree_icon.png',
+//        iconUrl: myURL + 'images/Tree_icon.png',
 //        iconSize:     [38, 95],
 //        iconAnchor:   [22, 94]
 //    });
