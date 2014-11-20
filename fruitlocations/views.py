@@ -2,32 +2,24 @@ from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 
 from django.contrib.gis.geos import Point
 from .models import FruitLocations
 from .forms import AddFruit
 
-#do a landing page with a form and a csrf token
-#then have another url for handling the post
-#then make the add fruit def be the fruit/add_fruit
-
 # @login_required
 
 
+# Take all data from FruitLocations model table and turn it into a json object to send to map via JS/AJAX (see find_fruit.js)
 def find_fruit(request):
-    item_list = FruitLocations.Objects.all()
-    output_list = []
-    for item in item_list:
-        output_item = {}
-        output_item["geom"] = item.geom
-        output_item["fruit_variety"] = item.fruit_variety
-        output_list.append(output_item)
-
-    return HttpResponse(json.dumps(response_data), content_type="application/json")
-
+    result = FruitLocations.objects.all()
+    data = serializers.serialize('json', result)
+    return Response(data, status=status.HTTP_200_OK, content_type='application/json')
     # return render_to_response('fruitlocations/find_fruit.html')
 
 
+# Create add fruit form that takes spatial data from a marker on a map garnered through JS/AJAX (see add_fruit.js) and save to DB
 def add_fruit(request):
 
     if request.method == 'POST':

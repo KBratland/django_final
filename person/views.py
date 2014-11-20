@@ -29,6 +29,10 @@ def person_profile(request):
     token.update(csrf(request))
     token['form'] = form
 
+    current_user = Person.objects.get(user_id=request.user.profile.user_id)
+    first_name = current_user.first_name
+    token['first_name'] = first_name
+
     return render_to_response('person_profile.html', token)
 
 

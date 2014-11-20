@@ -1,7 +1,7 @@
 {% extends 'Fruit_Finder_base.html' %}
 
 {{% block right_column %}
-    <h4>Fruit Finder {{ first_name }} Profile Page</h4>
+    <h4>{{ first_name }}'s Profile Page</h4>
     {% for field in forms %}
         {{ field.errors }}
     {% endfor %}
