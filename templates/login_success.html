@@ -1,11 +1,12 @@
 {% extends 'Fruit_Finder_base.html' %}
 
-{% block content %}
+{% block right_column %}
 
-<h1> You are successfully logged in </h1>
+<h2> You are successfully logged in as {{ first_name }}.</h2>
+<h3>Welcome!</h3>
     <div>
     <a href="/person/"><button type="button" class="btn btn-primary">Update profile here</button></a>
     <a href="/logout/"><button type="button" class="btn btn-primary">Logout</button></a>
     </div>
 
-{% endblock content %}
+{% endblock right_column %}

@@ -70,13 +70,3 @@ def ethics(request):
 
 def pick(request):
     return render_to_response('how_to_pick.html')
-
-#      username = request.POST.get('username', '')
-#             password = request.POST.get('password', '')
-#             user = auth.authenticate(username=username, password=password)
-#
-#             if user is not None:
-#                 if user.is_active:
-#                     login(request, user)
-#
-#             return render_to_response('profile.html', {'first_name':request.user.username})

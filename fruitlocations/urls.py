@@ -11,5 +11,6 @@ from fruitlocations import views
 
 urlpatterns = patterns('',
     url(r'^add_fruit/$', views.add_fruit, name="add_fruit"),
+    url(r'^find_fruit/$', views.find_fruit, name="find_fruit")
 
     )

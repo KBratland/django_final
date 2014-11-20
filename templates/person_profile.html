@@ -1,11 +1,12 @@
 {% extends 'Fruit_Finder_base.html' %}
 
-{{% block content %}
-    <p>Fruit Finder Profile Page</p>
+{{% block right_column %}
+    <h4>Fruit Finder {{ first_name }} Profile Page</h4>
     {% for field in forms %}
         {{ field.errors }}
     {% endfor %}
     <p>Please fill in the following fields to complete or update your profile.</p>
+    <br>
     <form action="" method="post">{% csrf_token %}
     {{ form.as_ul }}
 
@@ -13,4 +14,4 @@
     <a href="/logout/"><button type="button" class="btn btn-primary">Logout</button></a>
     </form>
 
-{% endblock content %}}
+{% endblock right_column %}}

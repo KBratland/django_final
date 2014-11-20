@@ -1,0 +1,26 @@
+{% extends 'Fruit_Finder_base.html' %}
+{% load staticfiles %}
+
+
+{% block left_column %}
+    <div id="map">
+        <script src="{% static 'fruitlocations/js/find_fruit.js' %}" type="text/javascript"></script>
+    </div>
+{% endblock left_column %}
+
+
+
+{% block right_column %}
+
+{% block sub_content %}
+{% endblock sub_content %}
+    <h3>Find a fruit</h3>
+    <p>To discover more than the fruits location click on the point icon to access the information</p>
+    <p>the button below will allow the user to actively change the information about the tree</p>
+    <a href="" class="btn btn-success" id="add_another_button">Update fruit information</a>
+
+
+    {% block sub_content2 %}
+    {% endblock sub_content2 %}
+
+{% endblock right_column %}

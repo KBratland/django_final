@@ -19,7 +19,7 @@ def person_profile(request):
         form = PersonForm(request.POST, instance=request.user.profile)
         if form.is_valid:
             form.save()
-            return HttpResponseRedirect('/login_success/')
+            return HttpResponseRedirect('/login_success/', {'first_name': request.user.username})
     else:
         user = request.user
         profile = user.profile
@@ -32,18 +32,4 @@ def person_profile(request):
     return render_to_response('person_profile.html', token)
 
 
-def api_endpoint(request):
-    item_list = Person.Objects.all()
-    output_list = []
 
-    for item in item_list:
-        output_item = {}
-        output_item["system_id"] = item.id
-        output_item["first_name"] = item.first_name
-        output_item["last_name"] = item.last_name
-        output_list.append(output_item)
-
-    return HttpResponse(
-        json.dumps(response_data),
-        content_type="application/json"
-    )

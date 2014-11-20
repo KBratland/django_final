@@ -13,7 +13,19 @@ from .forms import AddFruit
 
 # @login_required
 
-# def load_current_fruit(request):
+
+def find_fruit(request):
+    item_list = FruitLocations.Objects.all()
+    output_list = []
+    for item in item_list:
+        output_item = {}
+        output_item["geom"] = item.geom
+        output_item["fruit_variety"] = item.fruit_variety
+        output_list.append(output_item)
+
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+    # return render_to_response('fruitlocations/find_fruit.html')
 
 
 def add_fruit(request):
