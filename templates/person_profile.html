@@ -1,7 +1,12 @@
 {% extends 'Fruit_Finder_base.html' %}
 
 {{% block right_column %}
-    <h4>{{ first_name }}'s Profile Page</h4>
+    {% if first_name != None %}
+        <h2>Welcome back!</h2>
+        <h3>{{ first_name }}'s Profile Page</h3>
+    {% else %}
+        <h3>Welcome <em>{{ username }}</em>, please update your profile page.</h3> <h4>We're into using first names around here!</h4>
+    {% endif %}
     {% for field in forms %}
         {{ field.errors }}
     {% endfor %}
@@ -10,7 +15,7 @@
     <form action="" method="post">{% csrf_token %}
     {{ form.as_ul }}
 
-    <input type="submit" value="Update"/>
+    <input type="submit" class="btn btn-primary" value="Update"/>
     <a href="/logout/"><button type="button" class="btn btn-primary">Logout</button></a>
     </form>
 

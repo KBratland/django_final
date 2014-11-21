@@ -19,7 +19,7 @@ def registration(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render_to_response('registration_success.html')
+            return render_to_response('registration_success.html', {'username': request.user.username})
 
         else:
             return render_to_response('registration_fail.html')

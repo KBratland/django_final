@@ -19,7 +19,8 @@ def person_profile(request):
         form = PersonForm(request.POST, instance=request.user.profile)
         if form.is_valid:
             form.save()
-            return HttpResponseRedirect('/login_success/', {'first_name': request.user.username})
+# TODO create a landing page for logged in users - or could redirect them to the ethics and picking sections? - could do JS replace of objects in the DOM to be links for find and add - or could do if statement on html for alternate extends
+            return HttpResponseRedirect('/', {'first_name': request.user.username})
     else:
         user = request.user
         profile = user.profile
@@ -30,8 +31,10 @@ def person_profile(request):
     token['form'] = form
 
     current_user = Person.objects.get(user_id=request.user.profile.user_id)
+    username = request.user.username
     first_name = current_user.first_name
     token['first_name'] = first_name
+    token['username'] = username
 
     return render_to_response('person_profile.html', token)
 

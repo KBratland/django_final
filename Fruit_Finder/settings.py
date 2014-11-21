@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'person',
     'fruitlocations',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,6 +85,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

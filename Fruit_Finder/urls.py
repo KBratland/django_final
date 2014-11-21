@@ -26,4 +26,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^person/', include('person.urls')),
     url(r'^fruitlocations/', include('fruitlocations.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 )

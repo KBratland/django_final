@@ -1,6 +1,8 @@
 /**
  * Created by student on 11/19/14.
  */
+
+$(document).ready(function(){
     /* Define base layers */
     var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib='Map data © openstreetmap contributors';
@@ -30,7 +32,7 @@
         type: 'GET',
         success: function(response) {
             $.each(eval(response), function(key, val) {
-                //fields in JSON that was returned
+                //fields in JSON that were returned
                 var fields = val.fields;
 
                 // parse point field to get values of lat & lon
