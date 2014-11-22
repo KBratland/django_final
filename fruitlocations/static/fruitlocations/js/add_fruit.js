@@ -4,6 +4,8 @@
 
 
 $(document).ready(function(){
+    //instantiate the map and add the initial marker which will eventually grab lat/long for locating point
+
     var map = L.map('map').setView([45.52, -122.68], 13);
 
     var marker = L.marker([45.52, -122.6]);
@@ -17,13 +19,9 @@ $(document).ready(function(){
         maxZoom: 18
     }).addTo(map);
 
-    function load_current() {
-
-    }
-
+    // grab lat and long using a marker,
     function onMapClick(e) {
 
-      load_current();
       var lat = e.latlng.lat;
       var lng = e.latlng.lng;
 
@@ -31,7 +29,7 @@ $(document).ready(function(){
       if (typeof marker != 'undefined') {
           map.removeLayer(marker);  // delete previous marker
           marker = L.marker([lat, lng]).addTo(map);  // add new marker
-          marker.bindPopup("<b>Is your location right?</b><br>Click again to get a different location. Or double click the map to zoom in").openPopup();
+          marker.bindPopup("<b>Is your location right?</b><br>Click again to get a different location. Or double click the map to zoom in").openPopup(); // add instructional popup
       }
       else {
           marker = L.marker([lat, lng]).addTo(map);  // add new marker

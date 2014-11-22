@@ -47,7 +47,6 @@ INSTALLED_APPS = (
     'crispy_forms',
     'person',
     'fruitlocations',
-    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (

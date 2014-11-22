@@ -1,9 +1,7 @@
 __author__ = 'kristin'
 
-from django.conf.urls import patterns, include, url
-from django.conf import settings
-from django.conf.urls.static import static
-from django.views  import generic
+from django.conf.urls import patterns, url
+
 from fruitlocations import views
 
 
@@ -11,6 +9,6 @@ from fruitlocations import views
 
 urlpatterns = patterns('',
     url(r'^add_fruit/$', views.add_fruit, name="add_fruit"),
-    url(r'^find_fruit/$', views.find_fruit, name="find_fruit")
-
+    url(r'^find_fruit/$', views.find_fruit, name="find_fruit"),
+    url(r'^ajax_get_fruit/$', views.ajax_get_fruit, name="ajax_get_fruit"),
     )
